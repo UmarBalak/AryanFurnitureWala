@@ -22,7 +22,7 @@ if uploaded_file is not None:
     with st.spinner('Detecting furniture and generating recommendations...'):
         with open(temp_image_path, 'rb') as temp_file:
             files = {'file': temp_file}
-            response = requests.post("http://localhost:8000/predict", files=files)
+            response = requests.post("https://furniture.streamlit.app/predict", files=files)
 
     # Delete the temporary file after processing
     if os.path.exists(temp_image_path):
